@@ -9,8 +9,8 @@ export class StarService {
   public people: People[] = [];
   constructor(private http: HttpClient) {
     this.http.get('https://swapi.dev/api/people/?page=1')
-    .subscribe((resp) => {
-      console.log(resp);
+    .subscribe((resp: any) => {
+        this.people.push(...resp.results);
     });
   }
 }

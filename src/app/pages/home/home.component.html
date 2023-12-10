@@ -1,5 +1,5 @@
-<p>home works!</p>
-@for (item of starService.people; track $index) {
-    {{$index}}
-    {{item}}
- }
+<div class="grid grid-cols-2 gap-2">
+  @for (people of starService.people; track $index) {
+  <card-component [class]="$index % 2 ? 'bg-red-800' : 'bg-green-800'" [person]="people"></card-component>
+  }
+</div>
