@@ -1,7 +1,7 @@
 export interface People {
   name: string;
-  height: string;
-  image: string;
-  gender: string;
-  films: [];
+  height?: string;
+  image?: string;
+  gender?: string;
+  films?: [];
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StarService } from '../../services/star.service';
 import { CardComponent } from '../../components/card/card.component';
+import { People } from '../../interfaces/people.array';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,12 @@ import { CardComponent } from '../../components/card/card.component';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(public starService: StarService){
+  constructor(public starService: StarService) {}
 
-  }
-
-  ngOnInit(){
+  ngOnInit() {
+    const person: People = {
+      name: 'Test writing on a service',
+    };
+    this.starService.people.push(person);
   }
 }
